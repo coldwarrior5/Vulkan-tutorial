@@ -1,4 +1,4 @@
 language: cpp
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - ./configure && make && make test
+  - gcc -std=c11 stdafx.cpp VulkanTutorial.cpp VulkanHandler.cpp ErrorHandler.cpp ConsoleHandler.cpp -o main
