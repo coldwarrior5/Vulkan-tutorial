@@ -3,4 +3,4 @@ before_install:
   - sudo apt-get install git cmake build-essential libx11-xcb-dev libxkbcommon-dev libmirclient-dev libwayland-dev libxrandr-dev
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - gcc -m64 -I/C/VulkanSDK/1.0.3.1/Include -std=c11 stdafx.cpp VulkanTutorial.cpp VulkanHandler.cpp ErrorHandler.cpp ConsoleHandler.cpp -o main
+  - g++ -std=c++11 -m64 -Wall -Wextra -Werror -I/C/VulkanSDK/1.0.3.1/Include *.cpp -o main
