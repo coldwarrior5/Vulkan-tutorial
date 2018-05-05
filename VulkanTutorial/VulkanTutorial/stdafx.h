@@ -5,10 +5,11 @@
 
 #pragma once
 
+#include <cstdio>
+#ifdef _WIN32
 #include "targetver.h"
-
-#include <stdio.h>
 #include <tchar.h>
+#endif
 
 // My programs
 #include "vulkan/vulkan.h"
