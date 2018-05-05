@@ -3,4 +3,4 @@ before_install:
   - sudo apt-get install git cmake build-essential libx11-xcb-dev libxkbcommon-dev libmirclient-dev libwayland-dev libxrandr-dev
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - gcc -m64 -c -g -I/C/VulkanSDK/1.0.3.1/Include -std=c11 -MMD -MP -MF "build/Debug/MinGW-Windows/main.o.d" -o build/Debug/MinGW-Windows/main.o stdafx.cpp VulkanTutorial.cpp VulkanHandler.cpp ErrorHandler.cpp ConsoleHandler.cpp
+  - gcc -m64 -I/C/VulkanSDK/1.0.3.1/Include -std=c11 stdafx.cpp VulkanTutorial.cpp VulkanHandler.cpp ErrorHandler.cpp ConsoleHandler.cpp -o main
