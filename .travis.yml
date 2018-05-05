@@ -1,0 +1,4 @@
+language: cpp
+script:
+  - cd VulkanTutorial/VulkanTutorial
+  - gcc -std=c++11 stdafx.cpp VulkanTutorial.cpp VulkanHandler.cpp ErrorHandler.cpp ConsoleHandler.cpp -o main
