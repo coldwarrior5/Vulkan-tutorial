@@ -1,1 +1,4 @@
 language: cpp
+script:
+  - cd VulkanTutorial/VulkanTutorial
+  - ./configure && make && make test
