@@ -1,10 +1,11 @@
 language: cpp
 before_install:
-  - sudo apt-get install git cmake build-essential libx11-xcb-dev libxkbcommon-dev libmirclient-dev libwayland-dev libxrandr-dev
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libassimp-dev libglm-dev graphviz libxcb-dri3-0 libxcb-present0 libpciaccess0 cmake libpng-dev libxcb-dri3-dev libx11-dev libx11-xcb-dev libmirclient-dev libwayland-dev libxrandr-dev
   - wget -O vulkansdk-linux-x86_64-1.0.51.0.run https://vulkan.lunarg.com/sdk/download/1.0.51.0/linux/vulkansdk-linux-x86_64-1.0.51.0.run
   - chmod ugo+x vulkansdk-linux-x86_64-1.0.51.0.run
   - ./vulkansdk-linux-x86_64-1.0.51.0.run
   - export VULKAN_SDK=$TRAVIS_BUILD_DIR/VulkanSDK/1.0.51.0/x86_64
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - g++ -std=c++11 -m64 -Wall -Wextra -Werror -I/C/VulkanSDK/1.0.51.0/Include *.cpp -o main
+  - g++ -std=c++11 -m64 -Wall -Wextra -Werror -I$(VULKAN_SDK)/include -L$(VULKAN_SDK)/lib *.cpp -o main
