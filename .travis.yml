@@ -11,4 +11,4 @@ before_install:
 
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - g++ $(CFLAGS) -o VulkanTest *.cpp $(LDFLAGS)
+  - g++ "$(CFLAGS)" -o VulkanTest *.cpp "$(LDFLAGS)"
