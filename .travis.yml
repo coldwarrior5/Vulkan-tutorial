@@ -8,4 +8,4 @@ before_install:
   - export VULKAN_SDK=$TRAVIS_BUILD_DIR/VulkanSDK/1.0.51.0/x86_64
 script:
   - cd VulkanTutorial/VulkanTutorial
-  - g++ -std=c++11 -m64 -Wall -Wextra -I/$VULKAN_SDK/include -L/$VULKAN_SDK/lib *.cpp -o main
+  - g++ -std=c++11 -m64 -Wall -Wextra -I/$VULKAN_SDK/include -L/$VULKAN_SDK/Bin32/vulkan-1.lib *.cpp -o main
