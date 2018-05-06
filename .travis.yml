@@ -36,6 +36,7 @@ cache: ccache
 # Use the YAML block scalar header (|) to allow easier multiline script coding.
 
 before_install:
+  - chmod a+x ./update_external_sources.sh
   - set -e
   - |
     if [[ "$VULKAN_BUILD_TARGET" == "LINUX" ]]; then
