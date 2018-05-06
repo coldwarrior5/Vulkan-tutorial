@@ -1,4 +1,5 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
+#include <signal.h>
 
 namespace ErrorHandler
 {
@@ -35,7 +36,11 @@ namespace ErrorHandler
 			case VK_ERROR_NOT_PERMITTED_EXT:
 			case VK_RESULT_RANGE_SIZE:
 			case VK_RESULT_MAX_ENUM:
+				#ifdef _MSC_VER
 				__debugbreak();
+				#else
+				raise(SIGTRAP);
+				#endif
 				break;
 			default: ; 
 		}
