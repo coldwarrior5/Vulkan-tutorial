@@ -25,8 +25,8 @@ VkDevice VulkanHandler::CreateLogicalDevice(const VkInstance instance)
 		PrintGraphicsCardStats(physicalDevices[i]);
 	
 	VkDeviceQueueCreateInfo queueInfo = CreateDeviceQueueInfo();
-	VkPhysicalDeviceFeatures features = {};
-	VkDeviceCreateInfo deviceInfo = CreateDeviceInfo(&features, &queueInfo, 1);
+	VkPhysicalDeviceFeatures* features = new VkPhysicalDeviceFeatures();
+	VkDeviceCreateInfo deviceInfo = CreateDeviceInfo(features, &queueInfo, 1);
 	VkDevice device;
 	result = vkCreateDevice(physicalDevices[0], &deviceInfo, nullptr, &device); //TODO pick best device
 	ErrorHandler::HandleError(result);
